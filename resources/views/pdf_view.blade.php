@@ -11,6 +11,7 @@
 <body>
 <div class="container mt-5">
     <h2 class="text-center mb-3">Laravel HTML to PDF Example</h2>
+    Employees List
     <table class="table table-bordered mb-5">
         <thead>
         <tr class="table-danger">
@@ -29,6 +30,26 @@
             <td>{{ $employee['email']}}</td>
             <td>{{ $employee['phone_number']}}</td>
             <td>{{ $employee['dob']}}</td>
+        </tr>
+        @endforeach
+        </tbody>
+    </table>
+    <hr>
+    Users List
+    <table class="table table-bordered mb-5">
+        <thead>
+        <tr class="table-danger">
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($users ?? '' as $user)
+        <tr>
+            <th scope="row">{{ $user['id']}}</th>
+            <td>{{ $user['name']}}</td>
+            <td>{{ $user['email']}}</td>
         </tr>
         @endforeach
         </tbody>

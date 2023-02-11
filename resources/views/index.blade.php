@@ -14,6 +14,7 @@
     <div class="d-flex justify-content-end mb-4">
         <a class="btn btn-primary" href="{{ \Illuminate\Support\Facades\URL::to('/employee/pdf') }}">Export to PDF</a>
     </div>
+    Employees List
     <table class="table table-bordered mb-5">
         <thead>
         <tr class="table-danger">
@@ -32,6 +33,26 @@
                 <td>{{ $employee->email }}</td>
                 <td>{{ $employee->phone_number }}</td>
                 <td>{{ $employee->dob }}</td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+    <hr>
+    Users List
+    <table class="table table-bordered mb-5">
+        <thead>
+        <tr class="table-danger">
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($users ?? '' as $user)
+            <tr>
+                <th scope="row">{{ $user->id }}</th>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
             </tr>
         @endforeach
         </tbody>
